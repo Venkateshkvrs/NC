@@ -60,9 +60,9 @@ def receiver():
             print(f"Receiver----Packet lost\nReceiver----Sending NAK {ack}\n")
 
 if __name__ == "__main__":
-    file_path = "/Users/boppanavenkatesh/Desktop/NC/RDT/test_rdt.txt"  # Replace with your file path
+    file_path = "./test_rdt.txt"  # file path
     message = read_file(file_path)
-    loss_probability = 0.3  # Simulate 30% packet loss
+    loss_probability = 0.3  # Simulating 30% packet loss
 
     receiver_process = Process(target=receiver)
     sender_process = Process(target=sender, args=(message, loss_probability))
